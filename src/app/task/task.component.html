@@ -1,0 +1,15 @@
+<input class="form-control" (input)="textInput()" type="text"> 
+<button class="btn btn-primary"(click)="addName()">Add</button>
+
+<div *ngFor="let el of names">
+<ng-template #popContent>
+    <button (click) = "deleteTask(el)" class="btn btn-danger">Delete</button>
+</ng-template>
+
+<ng-template #popTitle>
+
+</ng-template>
+    <button placement="right" type="button" class="btn btn-outline-secondary" [ngbPopover]="popContent" [popoverTitle]="popTitle" >{{ el }}</button>
+</div>
+
+ 
